@@ -2,36 +2,50 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dice Baseball</title>
-
-    <link rel="stylesheet" src="./style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice Baseball</title>
+  <link rel="stylesheet" href="./style.css" />
 
 </head>
 
 <body>
 
-    <header>
-        <h1> Welcome to DICE BASEBALL!</h1>
-    </header>
+  <header>
+    <h1> Welcome to DICE BASEBALL!</h1>
+  </header>
 
-    <div>
-        <h2>How to play</h2>
-        <p id="play"></p>
-    </div>
-    <div>
-        <div id="dice"></div>
-        <br>
-        <button id="rollBtn"> Roll Dice </button>
-    </div>
+  <div>
+    <h2>Play Ball</h2>
+    <p id="play"></p>
+  </div>
 
-    <footer>
-        <p>Created by David Liebherr</p>
-    </footer>
+  <!-- pitchers dice -->
+  <div>
+    <div id="pitchDice"></div>
+    <br>
+    <button id="pitcherBtn"> Pitch Dice </button>
+  </div>
+
+  <!-- Batter Dice -->
+  <div>
+    <div id="batterDice"></div>
+    <br>
+    <button id="batterBtn"> Batter Dice </button>
+  </div>
+
+  <div class="pitchCount">
+    <div id="calledBalls">Balls: </div>
+    <div id="calledStrikes">Strikes: </div>
+    <div id="remainingOuts">Outs: </div>
+  </div>
+
+  <footer>
+    <p>Created by David Liebherr</p>
+  </footer>
 
 
-    <script src="./index.js"></script>
+  <script src="./index.js"></script>
 </body>
 
 </html>
