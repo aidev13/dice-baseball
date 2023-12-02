@@ -21,4 +21,13 @@
   padding-left: 8px;
 }
 
+#pitchDice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: black 1px solid;
+  border-radius: 7px;
+}
 

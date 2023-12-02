@@ -10,9 +10,9 @@ const strikes = document.getElementById('calledStrikes')
 
 const balls = document.getElementById('calledBalls')
 let totalBalls = balls.innerText
-totalBalls = 0
+totalBalls = 1
 
-
+// ------------- //
 class Die {
   sides = [1, 2, 3, 4, 5, 6]
   roll() {
@@ -21,24 +21,26 @@ class Die {
 }
 
 const ballCount = () => {
-  balls.innerText = "Balls: " + totalBalls ++
-}
+  if(playText.innerText === "Ball!") {
+    return balls.innerText = "Balls: " + totalBalls ++
+  }
+};
 
 
 // pitchers dice roll
 const pitchRolled = () => {
   const diceRolled = new Die
   const output = diceRolled.roll()
-
+  
   if(output === 1 || output === 3 || output === 5) {
     playText.innerText = "Strike!"
   }
   else
   playText.innerText = 'Ball!'
 
-  pitchDiceOutput.innerText = `The pitcher rolled a ${output}`
+    ballCount()
 
-  
+   return pitchDiceOutput.innerText = `${output}`
 
 };
 
