@@ -2,52 +2,42 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dice Baseball</title>
-  <link rel="stylesheet" href="./style.css" />
-
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+   <link rel="stylesheet" href="styles.css">
+   <title>Dice Baseball</title>
 </head>
 
 <body>
+   <header>
+      <h1>DiceBall</h1>
+   </header>
+   <main>
+      <div>
+         <div class="field_grid">
+            <div id="field_grid1"></div>
+            <div id="field_grid2">
+               <div id="second_base"></div>
+            </div>
+            <div id="field_grid3"></div>
+            <div id="field_grid4">
+               <div id="third_base"></div>
+            </div>
+            <div id="field_grid5">
+               <div id="field"> </div>
+            </div>
+            <div id="field_grid6">
+               <div id="first_base"></div>
+            </div>
+            <div id="field_grid7"></div>
+            <div id="field_grid8"></div>
+            <div id="field_grid9"></div>
+         </div>
+      </div>
+   </main>
 
-  <header>
-    <h1> Welcome to DICE BASEBALL!</h1>
-  </header>
-
-  <div>
-    <h2>Play Ball</h2>
-    <p id="play"></p>
-  </div>
-
-  <!-- pitchers dice -->
-  <div>
-    <div id="pitchDice"></div>
-    <br>
-    <button id="pitcherBtn"> Pitch Dice </button>
-  </div>
-
-  <!-- Batter Dice -->
-  <div>
-    <div id="batterDice"></div>
-    <br>
-    <button id="batterBtn"> Batter Dice </button>
-  </div>
-
-  <div class="pitchCount">
-    <div id="calledBalls">Balls: 0</div>
-    <div id="calledStrikes">Strikes: </div>
-    <div id="remainingOuts">Outs: </div>
-  </div>
-
-  
-
-  <footer>
-    <p>Created by David Liebherr</p>
-  </footer>
-
-
-  <script src="./index.js"></script>
+   <script src="script.js"></script>
 </body>
 
 </html>

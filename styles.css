@@ -1,0 +1,40 @@
+:root {
+   margin: .5em;
+
+}
+
+.field_grid {
+   display: grid;
+   width: 400px;
+   height: 400px;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr;
+}
+
+#field_grid5 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#field {
+   rotate: 45deg;
+   width: 275px;
+   height: 275px;
+   background-color: green;
+}
+
+#field_grid2, #field_grid4, #field_grid6 {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 1;
+}
+
+#first_base, #second_base, #third_base{
+   rotate: 45deg;
+   width: 15px;
+   height: 15px;
+   background-color: rgb(255, 255, 255);
+   border: 1px black solid;
+   border-radius: 2px;
+}
