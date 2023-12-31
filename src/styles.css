@@ -9,14 +9,18 @@
    height: 400px;
    grid-template-columns: 1fr 1fr 1fr;
    grid-template-rows: 1fr 1fr 1fr;
+  
 }
 
 #field_grid5 {
    display: flex;
    justify-content: center;
    align-items: center;
+  
 }
+
 #field {
+   display: flex;
    box-shadow: 0px 0px 30px rgb(3, 186, 3);
    border: 5px rgb(25, 241, 25) solid;
    border-radius: 5px;
@@ -24,6 +28,29 @@
    width: 275px;
    height: 275px;
    background-color: green;
+   /* border-radius: 90px 0px 0px 0px; */
+   justify-content: center;
+   align-items: center;
+ 
+}
+
+#roll_dice {
+   rotate: -45deg;
+   border-radius: 45px;
+   height: 75px;
+   width: 75px;
+   background-color: rgb(206, 206, 206);
+   border: rgb(255, 255, 255) 2px solid;
+   font-size: 14px;
+   font-weight: bold;
+   color: rgb(0, 0, 0);
+   box-shadow: 0px 0px 20px white;
+}
+
+#roll_dice:hover {
+   border: rgb(68, 102, 255) 2px solid;
+   box-shadow: 0px 0px 20px rgb(49, 34, 255);
+   background-color: white;
 }
 
 #field_grid2, #field_grid4, #field_grid6 {
@@ -41,3 +68,4 @@
    border: 1px black solid;
    border-radius: 2px;
 }
+

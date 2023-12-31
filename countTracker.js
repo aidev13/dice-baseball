@@ -7,18 +7,9 @@ function count() {
    }
    reset()
 }
-count()
-count()
-count()
-count()
 
-count()
-count()
-count()
-count()
-count()
-count()
-count()
+
+
 
 function reset() {
    if(counter === 4) {
@@ -28,4 +19,4 @@ function reset() {
 }
 
 
-console.log(counter)
+console.log(ballCounter)

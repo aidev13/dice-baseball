@@ -13,11 +13,16 @@
    <header class="d-flex justify-content-center">
       <h1>DiceBall</h1>
    </header>
+
+   <!-- Call Card -->
    <div id="call_card">
       <div id="outs">Outs: 0</div>
       <div id="balls">Balls: 0</div>
       <div id="strikes">Strikes: 0</div>
+      <div id="call_on_field"></div>
    </div>
+
+   <!-- Field of play -->
    <main>
       <div>
          <div class="field_grid">
@@ -30,7 +35,12 @@
                <div id="third_base"></div>
             </div>
             <div id="field_grid5">
-               <div id="field"> </div>
+
+               <!-- Pitch Button -->
+               <div id="field">
+                  <button id="roll_dice">Roll dice</button>
+               </div>
+
             </div>
             <div id="field_grid6">
                <div id="first_base"></div>
