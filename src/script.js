@@ -6,6 +6,7 @@ const strikes = document.getElementById("strikes");
 const outs = document.getElementById("outs");
 const rollButton = document.querySelector("#roll_dice");
 
+const scoreCardContainer = document.querySelector("#score_card");
 //
 
 let ballCount = 0;
@@ -19,24 +20,27 @@ const call = () => {
     let diceball = [1, 2, 3, 4, 5, 6];
     let dice_result = Math.floor(Math.random() * diceball.length + 1);
     const even_true = dice_result % 2 === 0;
+    const diceRolled = document.querySelector("#diceRolled");
+    diceRolled.innerText = dice_result;
 
     if (even_true === true) {
-        call_on_field.innerText = "strike";
+        call_on_field.innerHTML = "<i>Strike</i>";
+        //   call_on_field.style = "color: red; font-weight: bold;"
         strikes.innerText = `Strikes: ${strikeCount + 1}`;
         strikeCount++;
         out();
-        strikeOut();
         setInterval(() => {
             strikes.innerText = `Strikes: ${strikeCount}`;
         }, "4000");
+        strikeOut();
     } else if (even_true === false) {
-        call_on_field.innerText = "ball";
+        call_on_field.innerText = "Ball";
         balls.innerText = `Balls: ${ballCount + 1}`;
         ballCount++;
-        walk();
         setInterval(() => {
             balls.innerText = `Balls: ${ballCount}`;
         }, "4000");
+        walk();
     }
 };
 
@@ -65,6 +69,7 @@ const out = () => {
     if (strikeCount === 3) {
         outCount++;
         outs.innerText = `Outs: ${outCount}`;
+        call_on_field.innerText = "OUT!";
     }
 
     if (outCount === 3) {
@@ -83,3 +88,21 @@ rollButton.addEventListener("click", (e) => {
     e.preventDefault;
     call();
 });
+
+function scoreBoard(awayRuns, homeRuns) {
+    const scoreCard = document.createElement("div");
+    scoreCard.className = "scoreCardCss";
+    scoreCard.textContent = "Score board: ";
+
+    scoreCardContainer.appendChild(scoreCard);
+
+    const awayScore = document.createElement("div");
+    awayScore.textContent = `Away: ${awayRuns}`;
+    scoreCard.appendChild(awayScore);
+
+    const homeScore = document.createElement("div");
+    homeScore.textContent = `Home: ${homeRuns}`;
+    scoreCard.appendChild(homeScore);
+}
+
+scoreBoard(0, 0);

@@ -3,6 +3,11 @@
 
 }
 
+.field_layout {
+   display: flex;
+   justify-content: center;
+}
+
 .field_grid {
    display: grid;
    width: 400px;
@@ -21,8 +26,8 @@
 
 #field {
    display: flex;
-   box-shadow: 0px 0px 30px rgb(3, 186, 3);
-   border: 5px rgb(25, 241, 25) solid;
+   box-shadow: 0px 0px 20px 2px rgb(154, 154, 154);
+   border: 5px rgb(213, 213, 138) solid;
    border-radius: 5px;
    rotate: 45deg;
    width: 275px;
@@ -69,3 +74,13 @@
    border-radius: 2px;
 }
 
+.scoreCardCss {
+   border: 2px black solid;
+   border-radius: 8px;
+   padding: 12px;
+}
+
+.info_header {
+   display: flex;
+   justify-content: space-between;
+}
