@@ -26,8 +26,8 @@
 
 #field {
    display: flex;
-   box-shadow: 0px 0px 20px 2px rgb(154, 154, 154);
-   border: 5px rgb(213, 213, 138) solid;
+   box-shadow: 0px 0px 20px 2px rgb(151, 151, 151);
+   border: 5px rgb(251, 176, 0) solid;
    border-radius: 5px;
    rotate: 45deg;
    width: 275px;

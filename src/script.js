@@ -9,12 +9,15 @@ const rollButton = document.querySelector("#roll_dice");
 const scoreCardContainer = document.querySelector("#score_card");
 //
 
-let ballCount = 0;
+let ballCount = 3;
 let strikeCount = 0;
 let outCount = 0;
 
 // DOM bases
 const firstBase = document.querySelector("#first_base");
+const secondBase = document.querySelector("#second_base");
+const thirdBase = document.querySelector("#third_base");
+
 
 const call = () => {
     let diceball = [1, 2, 3, 4, 5, 6];
@@ -43,14 +46,21 @@ const call = () => {
         walk();
     }
 };
+let onFirst = "";
 
 const walk = () => {
     if (ballCount === 4) {
         balls.innerText = "Walk";
         counterReset();
         strikes.innerText = `Strikes: ${strikeCount}`;
-    }
+        firstBase.style.backgroundColor = "yellow";
+        onFirst = true;
+      }
 };
+
+console.log(ballCount)
+console.log(secondBase.style.backgroundColor)
+
 
 const strikeOut = () => {
     if (strikeCount === 3) {
@@ -62,7 +72,7 @@ const strikeOut = () => {
 
 const counterReset = () => {
     strikeCount = 0;
-    ballCount = 0;
+    ballCount = 3;
 };
 
 const out = () => {
@@ -73,6 +83,9 @@ const out = () => {
     }
 
     if (outCount === 3) {
+        firstBase.style = "background-color: white;";
+        secondBase.style = "background-color: white;";
+        thirdBase.style = "background-color: white;";
         outCount = 0;
         outs.innerText = `Outs: ${outCount}`;
         call_on_field.innerText = "Switching sides!";
@@ -88,6 +101,8 @@ rollButton.addEventListener("click", (e) => {
     e.preventDefault;
     call();
 });
+
+// appended scoreboard
 
 function scoreBoard(awayRuns, homeRuns) {
     const scoreCard = document.createElement("div");
