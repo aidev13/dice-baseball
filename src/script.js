@@ -9,7 +9,7 @@ const rollButton = document.querySelector("#roll_dice");
 const scoreCardContainer = document.querySelector("#score_card");
 //
 
-let ballCount = 3;
+let ballCount = 0;
 let strikeCount = 0;
 let outCount = 0;
 
@@ -17,7 +17,6 @@ let outCount = 0;
 const firstBase = document.querySelector("#first_base");
 const secondBase = document.querySelector("#second_base");
 const thirdBase = document.querySelector("#third_base");
-
 
 const call = () => {
     let diceball = [1, 2, 3, 4, 5, 6];
@@ -46,21 +45,14 @@ const call = () => {
         walk();
     }
 };
-let onFirst = "";
 
 const walk = () => {
     if (ballCount === 4) {
         balls.innerText = "Walk";
         counterReset();
         strikes.innerText = `Strikes: ${strikeCount}`;
-        firstBase.style.backgroundColor = "yellow";
-        onFirst = true;
-      }
+    }
 };
-
-console.log(ballCount)
-console.log(secondBase.style.backgroundColor)
-
 
 const strikeOut = () => {
     if (strikeCount === 3) {
@@ -72,7 +64,7 @@ const strikeOut = () => {
 
 const counterReset = () => {
     strikeCount = 0;
-    ballCount = 3;
+    ballCount = 0;
 };
 
 const out = () => {
@@ -121,3 +113,44 @@ function scoreBoard(awayRuns, homeRuns) {
 }
 
 scoreBoard(0, 0);
+
+// ----- EXPERIMENTIAL BALL MOVEMENT CODE ----- //
+
+// const ball = document.querySelector("#ball");
+// const screenBody = document.body;
+// let posX = 0;
+// let posY = 0;
+// const step = 20;
+
+// const moving = (e) => {
+//     console.log(e.key);
+//     if (e.key === "ArrowUp") {
+//         posY -= step;
+//     } else if (e.key === "ArrowDown") {
+//         posY += step;
+//     } else if (e.key === "ArrowRight") {
+//         posX += step;
+//     } else if (e.key === "ArrowLeft") {
+//         posX -= step;
+//     }
+
+//     on_base();
+
+//     ball.style.transform = `translate(${posX}px, ${posY}px)`;
+// };
+
+// const on_base = () => {
+//     if (posX >= 205 && posX <= 225 && posY >= 203&& posY <= 223) {
+//         document.querySelector("h1").textContent = "Man on second!";
+//     } else {
+//       document.querySelector("h1").textContent = "DiceBall";
+//     }
+// };
+
+// screenBody.addEventListener("keydown", moving);
+// screenBody.addEventListener("click", (e) => {
+//     console.log(e.clientX, e.clientY);
+// });
+
+
+// ----- END OF BALL MOVEMENT CODE SNIPPENT ----- //
