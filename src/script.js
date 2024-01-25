@@ -5,12 +5,18 @@ const balls = document.getElementById("balls")
 const strikes = document.getElementById("strikes")
 const outs = document.getElementById("outs")
 const rollButton = document.querySelector("#roll_dice")
+const awayScore = document.getElementById('awayScore')
+const homeScore = document.getElementById('homeScore')
 
-const scoreCardContainer = document.querySelector("#score_card")
+
 //
+const counterReset = () => {
+   strikeCount = 1
+   ballCount = 3
+}
 
 let ballCount = 3
-let strikeCount = 0
+let strikeCount = 1
 let outCount = 0
 
 // DOM bases
@@ -51,6 +57,8 @@ let awayRuns = 0
 let onFirst = false
 let onSecond = false
 let onThird = false
+awayScore.textContent = `Away: ${awayRuns}`
+homeScore.textContent = `Home: ${homeRuns}`
 const walk = () => {
 
     if (ballCount === 4 && !onFirst) {
@@ -68,8 +76,10 @@ const walk = () => {
          onThird = true
          thirdBase.style.backgroundColor = 'red'
       } else if (ballCount === 4 && onFirst && onSecond && onThird) {
+         awayRuns++
+         awayScore.textContent = `Away: ${awayRuns}`
          counterReset()
-        console.log(awayRuns += 1)
+
       }
       
    }
@@ -82,10 +92,6 @@ const strikeOut = () => {
     }
 }
 
-const counterReset = () => {
-    strikeCount = 0
-    ballCount = 3
-}
 
 const out = () => {
     if (strikeCount === 3) {
@@ -110,30 +116,10 @@ const out = () => {
 // rolling the dice button
 
 rollButton.addEventListener("click", (e) => {
-    e.preventDefault
+    e.preventDefault();
     call()
 })
 
-// appended scoreboard
-
-function scoreBoard(awayRuns, homeRuns) {
-   const scoreCard = document.createElement("div")
-    scoreCard.className = "scoreCardCss"
-    scoreCard.textContent = "Score board: "
-    
-    scoreCardContainer.appendChild(scoreCard)
-    
-    const awayScore = document.createElement("div")
-    awayScore.textContent = `Away: ${awayRuns}`
-    scoreCard.appendChild(awayScore)
-    
-    const homeScore = document.createElement("div")
-    homeScore.textContent = `Home: ${homeRuns}`
-    scoreCard.appendChild(homeScore)
-   }
-
-scoreBoard(awayRuns, homeRuns)
-console.log(awayRuns)
 
 
 // ----- EXPERIMENTIAL BALL MOVEMENT CODE ----- //

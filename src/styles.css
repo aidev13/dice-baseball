@@ -74,15 +74,20 @@
    border-radius: 2px;
 }
 
-.scoreCardCss {
-   border: 2px black solid;
+.scoreCard {
+   border: 2px darkgray solid;
+   padding: 5px;
    border-radius: 8px;
-   padding: 12px;
+   background-color: rgb(60, 60, 60);
+   color: white;
+   font-weight: 500;
 }
 
 .info_header {
    display: flex;
    justify-content: space-between;
+   align-items: center;
+   padding-right: 25px;
 }
 
 #ball {
