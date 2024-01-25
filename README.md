@@ -74,31 +74,3 @@ If more than one player on each team anyone other than the pitcher must roll aga
 If the batter rolls a higher dice then the runner advances(only one runner)
 Ff the catcher rolls the higher die the runner is out.
 Ties are null and must be rolled again.
-
-# My Notes and Journey.
-
-##### 11/23/23
-
-Happy Thanksgiving. Went deer hunting this morning and saw nothing. Today I attempted to write an if-statment using ||. My first attenpt looked like this...
-
-```
-if (output === 1 || 3 || 5) {
-  run code
-} else if (output === 2 || 4 || 6) {
-  run this code
-}
-```
-
-this broke and did not excute properly.
-
-I ended up with the following...
-
-```
-if(output === 1 || output === 3 || output === 5) {
-    playText.innerText = "Strike!"
-  }
-  else
-  playText.innerText = 'Ball!'
-```
-
-This works, for now. I am wondering if i can use some kind of mathod for odds and even numbers?? 'Im heppy with this for now!
