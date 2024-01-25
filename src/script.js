@@ -5,14 +5,13 @@ const balls = document.getElementById("balls")
 const strikes = document.getElementById("strikes")
 const outs = document.getElementById("outs")
 const rollButton = document.querySelector("#roll_dice")
-const awayScore = document.getElementById('awayScore')
-const homeScore = document.getElementById('homeScore')
-
+const awayScore = document.getElementById("awayScore")
+const homeScore = document.getElementById("homeScore")
 
 //
 const counterReset = () => {
-   strikeCount = 1
-   ballCount = 3
+    strikeCount = 1
+    ballCount = 3
 }
 
 let ballCount = 3
@@ -39,16 +38,16 @@ const call = () => {
         out()
         setInterval(() => {
             strikes.innerText = `Strikes: ${strikeCount}`
-         }, "4000")
-         strikeOut()
-      } else if (even_true === false) {
-         call_on_field.innerText = "Ball"
+        }, "4000")
+        strikeOut()
+    } else if (even_true === false) {
+        call_on_field.innerText = "Ball"
         balls.innerText = `Balls: ${ballCount + 1}`
         ballCount++
         setInterval(() => {
-           balls.innerText = `Balls: ${ballCount}`
-         }, "4000")
-         walk()
+            balls.innerText = `Balls: ${ballCount}`
+        }, "4000")
+        walk()
     }
 }
 
@@ -60,29 +59,26 @@ let onThird = false
 awayScore.textContent = `Away: ${awayRuns}`
 homeScore.textContent = `Home: ${homeRuns}`
 const walk = () => {
-
     if (ballCount === 4 && !onFirst) {
         balls.innerText = "Walk"
         counterReset()
         strikes.innerText = `Strikes: ${strikeCount}`
-        firstBase.style.backgroundColor = 'red'
+        firstBase.style.backgroundColor = "red"
         onFirst = true
-      } else if(ballCount === 4 && onFirst && !onSecond) {
-         counterReset()
-         onSecond = true
-         secondBase.style.backgroundColor = 'red'
-      } else if (ballCount === 4 && onFirst && onSecond && !onThird) {
-         counterReset()
-         onThird = true
-         thirdBase.style.backgroundColor = 'red'
-      } else if (ballCount === 4 && onFirst && onSecond && onThird) {
-         awayRuns++
-         awayScore.textContent = `Away: ${awayRuns}`
-         counterReset()
-
-      }
-      
-   }
+    } else if (ballCount === 4 && onFirst && !onSecond) {
+        counterReset()
+        onSecond = true
+        secondBase.style.backgroundColor = "red"
+    } else if (ballCount === 4 && onFirst && onSecond && !onThird) {
+        counterReset()
+        onThird = true
+        thirdBase.style.backgroundColor = "red"
+    } else if (ballCount === 4 && onFirst && onSecond && onThird) {
+        awayRuns++
+        awayScore.textContent = `Away: ${awayRuns}`
+        counterReset()
+    }
+}
 
 const strikeOut = () => {
     if (strikeCount === 3) {
@@ -91,7 +87,6 @@ const strikeOut = () => {
         balls.innerText = `Balls: ${ballCount}`
     }
 }
-
 
 const out = () => {
     if (strikeCount === 3) {
@@ -108,19 +103,23 @@ const out = () => {
         outs.innerText = `Outs: ${outCount}`
         call_on_field.innerText = "Switching sides!"
         setInterval(() => {
-            call_on_field.innerText = "Play Ball!"
-        }, "4000")
+           call_on_field.innerText = "Play Ball!"
+         }, "4000")
+         switchSides()
     }
 }
 
+function switchSides() {
+    onFirst = false
+    onSecond = false
+    onThird = false
+}
 // rolling the dice button
 
 rollButton.addEventListener("click", (e) => {
-    e.preventDefault();
+    e.preventDefault()
     call()
 })
-
-
 
 // ----- EXPERIMENTIAL BALL MOVEMENT CODE ----- //
 
